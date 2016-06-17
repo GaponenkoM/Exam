@@ -1,0 +1,71 @@
+﻿@mixin respond-to($media) {
+  @if $media == mobiles {
+    @media only screen and (min-width: 1px){ @content; }
+  }
+  @else if $media == tablets {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+  @else if $media == laptops {
+    @media only screen and (min-width: 1440px) { @content; }
+  }
+}
+@mixin clearfix{
+	&:after{
+		visibility: hidden;
+		display: block;
+		content: "";
+		clear: both;
+		height: 0;
+	}
+}
+@mixin transition($value) {
+    -webkit-transition: $value .5s ease-out;
+    -moz-transition: $value .5s ease-out;
+    -o-transition: $value .5s ease-out;
+    transition: $value .5s ease-out;
+}
+@mixin transform($value) {
+	-o-transform: translateX($value);
+	-ms-transform: translateX($value);
+	-moz-transform: translateX($value);
+	-webkit-transform: translateX($value);
+	transform: translateX($value);
+}
+@mixin wrapper($wrapper-width){
+	width: $wrapper-width;
+	margin: 0 auto;
+	position: relative;
+}
+@mixin block($hg){
+	width: 100%;
+	height: $hg;
+	position: relative;
+	overflow: hidden;
+	background-color: $main-color;
+	box-sizing: border-box;
+}	
+@mixin link($cl, $fsz, $ff){        
+	display: inline-block;
+	text-decoration: none;
+	color: $cl;
+	font-size: $fsz;
+	font-family: $ff;
+	cursor: pointer;
+}
+@mixin title($fnsz){        
+	color: $main-color;
+	font-size: $fnsz;
+	font-family: $main-font;
+	text-align: center;
+}
+@mixin position($position, $top, $left){
+	position: $position;
+	top: $top;
+	left: $left; 
+}
+@mixin sliderBtn($w, $h, $url){
+	width: $w;
+	height: $h;
+	background-image: url($url);
+	z-index: 1;
+}
